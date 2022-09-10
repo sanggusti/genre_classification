@@ -1,0 +1,11 @@
+name: validation_data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas
+  - pip
+  - pytest
+  - scipy
+  - pip:
+      - wandb
