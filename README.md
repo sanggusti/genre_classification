@@ -1,6 +1,6 @@
 # Genre Classification
 
-This is a Reproducible Machine Learning Project to classify music genre. This project built around MLFlow, Hydra, wandb with scientific libraries like Scikit Learn, Scipy, pandas, numpy etc. You can see the run on wandb [here](https://wandb.ai/gustiwinata/exercise_14)
+This is a Reproducible Machine Learning Project to classify music genre. This project built around MLFlow, Hydra, wandb with scientific libraries like Scikit Learn, Scipy, pandas, numpy etc. You can see the run on wandb [here](https://wandb.ai/gustiwinata/genre_classification_prod)
 
 ## How to run
 
