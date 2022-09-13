@@ -1,4 +1,3 @@
-*.swp
 .python-version
 wandb
 wandb-debug.log
@@ -10,3 +9,4 @@ mlruns
 artifacts
 outputs
 multirun
+model

@@ -25,3 +25,44 @@ or if you don't want to clone this repo but still wanted to run this project as 
 ```bash
 > mlflow run https://github.com/sanggusti/genre_classification
 ```
+
+## Command lists
+
+Download model artifact
+
+```bash
+> wandb artifact get genre_classification_prod/model_export:prod --root model
+```
+
+Run Sweeps of parameters
+
+```bash
+mlflow run . \
+  -P hydra_options="-m main.execute_steps='random_forest' \
+                    random_forest_pipeline.random_forest.max_depth=range(10,50,3) \
+                    random_forest_pipeline.tfidf.max_features=range(50,200,50) \
+                    hydra/launcher=joblib"
+```
+
+Batch(Offline) Inference
+
+```bash
+> mlflow models predict \
+                -t csv \
+                -i ./artifacts/data_test.csv:v0/data_test.csv \
+                -m model
+```
+
+Realtime Inference
+
+```bash
+> mlflow models serve -m model &
+```
+
+> (note that we run in the background by using & so that the REST API stays active) We can now perform inference using our model, for example using Python.
+
+Docker Deployment
+
+```bash
+> mlflow models build-docker -m model -n "genre_classification"
+```
